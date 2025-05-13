@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="layout_theme" parent="ThemeOverlay.Material3">
+
+        <item name="backgroundTint">#FF000000</item>
+    </style>
+
+</resources>
