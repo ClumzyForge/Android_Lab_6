@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,6 +18,10 @@ import kotlin.math.round
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        println("MainActivity created")
+        Toast.makeText(applicationContext, "MainActivity created", Toast.LENGTH_SHORT).show()
+
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -36,5 +41,17 @@ class MainActivity : AppCompatActivity() {
 
         })
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        println("MainActivity started")
+        Toast.makeText(applicationContext, "MainActivity started", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        println("MainActivity destroyed")
+        Toast.makeText(applicationContext, "MainActivity destroyed", Toast.LENGTH_SHORT).show()
     }
 }
